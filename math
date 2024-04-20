@@ -1,0 +1,33 @@
+int main(void)
+{
+    printf("%i", permutations(P));
+    printf("%i", combinations(C, M, N));
+    printf("%i", placement(A, K, Na));
+}
+
+int permutations(P)
+{
+    return factorial(P);
+}
+
+int combinations(C, M, N)
+{
+    int x = N - M;
+    return factorial(N)/(factorial(M)*(factorial(x)));
+}
+
+int placement(A, K, Na)
+{
+    int x = Na - K;
+    return factorial(Na)/factorial(x);
+}
+
+int factorial(x)
+{
+    int accumulative = 1;
+    for (int i = 0; i < x; i++)
+    {
+        accumulative = accumulative * i;
+    }
+    return accumulative;
+}
